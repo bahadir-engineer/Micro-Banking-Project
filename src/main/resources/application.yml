@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: Micro Banking Project
+
+  config:
+    import:
+      - classpath:application-server.yml
+      - classpath:application-db.yml
+      - classpath:application-redis.yml
+      - classpath:application-token.yml
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html

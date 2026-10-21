@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: ${POSTGRES_URL}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        generate_statistics: true
+        logging:
+          level:
+            org:
+              hibernate:
+                cache: TRACE
+        cache:
+          region:
+            factory_class: jcache
+          use_second_level_cache: true
+          use_query_cache: true
+        javax:
+          cache:
+            provider: org.ehcache.jsr107.EhcacheCachingProvider

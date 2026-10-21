@@ -1,0 +1,7 @@
+spring:
+  data:
+    redis:
+      host: ${REDIS_HOST_NAME}
+      port: ${REDIS_CONTAINER_PORT}
+      timeout: ${REDIS_TIMEOUT}
+      database: ${REDIS_DATABASE}

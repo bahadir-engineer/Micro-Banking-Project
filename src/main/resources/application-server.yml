@@ -1,0 +1,2 @@
+server:
+  port: ${BACKEND_HOST_PORT}
