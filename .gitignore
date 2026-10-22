@@ -35,4 +35,9 @@ out/
 
 ### VS Code ###
 .vscode/
+### Environment
 .env
+
+### tls certificate and private key
+nginx/certs/nginx-selfsigned.crt
+nginx/certs/nginx-selfsigned.key
