@@ -22,7 +22,7 @@ public class SecurityConfig {
     public static final String[] AUTH_WHITELIST = {
             "/",
             "/error",
-            "/api/v1/auth/**"
+            "/v1/auth/**"
     };
 
     public static final String[] USER_AUTH_WHITELIST = {

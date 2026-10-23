@@ -1,5 +1,5 @@
-//package com.example.microbankingproject.service;
-//
-//public interface PaymentService {
-//    void transfer();
-//}
+package com.example.microbankingproject.service;
+
+public interface PaymentService {
+    void transfer();
+}
