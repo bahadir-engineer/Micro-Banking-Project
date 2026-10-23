@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-@RequestMapping("/api/auth")
+@RequestMapping("/api/v1/auth")
 public class AuthController {
 
     AuthService authService;
@@ -40,17 +40,17 @@ public class AuthController {
         authService.resendOTP(resendOTPRequestDto);
     }
 
-    @PostMapping("/refresh/token")
-    public AuthenticationDto refreshToken(@Valid @RequestBody AccessTokenRequestDto accessTokenRequestDto,
-                                          HttpServletRequest request,
-                                          HttpServletResponse response) {
-        return authService.refreshToken(accessTokenRequestDto, request, response);
-    }
+//    @PostMapping("/refresh/token")
+//    public AuthenticationDto refreshToken(@Valid @RequestBody TokenRequestDto tokenRequestDto,
+//                                          HttpServletRequest request,
+//                                          HttpServletResponse response) {
+//        return authService.refreshToken(tokenRequestDto, request, response);
+//    }
 
     @PostMapping("/logout")
-    public void logout(@Valid @RequestBody AccessTokenRequestDto accessTokenRequestDto,
+    public void logout(@Valid @RequestBody TokenRequestDto tokenRequestDto,
                        HttpServletRequest request,
                        HttpServletResponse response) {
-        authService.logout(accessTokenRequestDto, request, response);
+        authService.logout(tokenRequestDto, request, response);
     }
 }

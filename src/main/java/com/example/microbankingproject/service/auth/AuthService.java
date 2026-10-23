@@ -16,9 +16,7 @@ public interface AuthService {
 
     void resendOTP(ResendOTPRequestDto resendOTPRequestDto);
 
-    AuthenticationDto refreshToken(AccessTokenRequestDto accessTokenRequestDto, HttpServletRequest request, HttpServletResponse response);
+//    AuthenticationDto refreshToken(TokenRequestDto tokenRequestDto, HttpServletRequest request, HttpServletResponse response);
 
-    void logout(AccessTokenRequestDto accessTokenRequestDto, HttpServletRequest request, HttpServletResponse response);
-
-    UserDetails getAccount();
+    void logout(TokenRequestDto tokenRequestDto, HttpServletRequest request, HttpServletResponse response);
 }

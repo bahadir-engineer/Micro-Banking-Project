@@ -1,12 +1,10 @@
 package com.example.microbankingproject.service.auth.impl;
 
-import com.example.investhome.entity.AgentEntity;
-import com.example.investhome.entity.UserEntity;
-import com.example.investhome.exception.ApplicationException;
-import com.example.investhome.exception.CommonErrors;
-import com.example.investhome.repository.AgentRepository;
-import com.example.investhome.repository.UserRepository;
-import com.example.investhome.service.auth.AuthUserDetailsService;
+import com.example.microbankingproject.entity.UserEntity;
+import com.example.microbankingproject.exception.ApplicationException;
+import com.example.microbankingproject.exception.CommonErrors;
+import com.example.microbankingproject.repository.UserRepository;
+import com.example.microbankingproject.service.auth.AuthUserDetailsService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -18,31 +16,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthUserDetailsServiceImpl implements AuthUserDetailsService {
 
-    AgentRepository agentRepository;
     UserRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String identifier) {
-        if (identifier.startsWith("+")) {
-            UserEntity userEntity = userRepository.findByPhoneWithRoles(identifier);
-            if (userEntity != null) {
-                return userEntity;
-            }
-
-            AgentEntity agentEntity = agentRepository.findByPhoneWithRoles(identifier);
-            if (agentEntity != null) {
-                return agentEntity;
-            }
-        } else {
-            UserEntity userEntity = userRepository.findByEmailWithRoles(identifier);
-            if (userEntity != null) {
-                return userEntity;
-            }
-
-            AgentEntity agentEntity = agentRepository.findByEmailWithRoles(identifier);
-            if (agentEntity != null) {
-                return agentEntity;
-            }
+        UserEntity userEntity = userRepository.findByPhoneWithRoles(identifier);
+        if (userEntity != null) {
+            return (UserDetails) userEntity;
         }
         throw new ApplicationException(CommonErrors.ACCOUNT_NOT_FOUND);
     }

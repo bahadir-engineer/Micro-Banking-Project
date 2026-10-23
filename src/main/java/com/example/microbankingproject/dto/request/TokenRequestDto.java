@@ -10,7 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-public class AccessTokenRequestDto {
+public class TokenRequestDto {
     @NotBlank(message = "Access Token boş ola bilməz")
     private String accessToken;
+    @NotBlank(message = "Access Token boş ola bilməz")
+    private String refreshToken;
 }
