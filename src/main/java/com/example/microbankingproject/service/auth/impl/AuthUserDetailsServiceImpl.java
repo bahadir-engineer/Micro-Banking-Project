@@ -1,4 +1,4 @@
-package com.example.microbankingproject.service.impl;
+package com.example.microbankingproject.service.auth.impl;
 
 import com.example.investhome.entity.AgentEntity;
 import com.example.investhome.entity.UserEntity;

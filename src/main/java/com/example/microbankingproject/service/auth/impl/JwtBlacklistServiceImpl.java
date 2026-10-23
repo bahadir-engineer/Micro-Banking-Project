@@ -1,6 +1,6 @@
-package com.example.microbankingproject.service.impl;
+package com.example.microbankingproject.service.auth.impl;
 
-import com.example.investhome.service.auth.JwtBlacklistService;
+import com.example.microbankingproject.service.auth.JwtBlacklistService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;

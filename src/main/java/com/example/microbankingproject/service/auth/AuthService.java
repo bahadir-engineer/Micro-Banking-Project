@@ -12,10 +12,6 @@ public interface AuthService {
 
     void loginPhone(LoginPhoneDto loginPhoneDto);
 
-    AuthenticationDto loginWithGoogle(AuthCodeRequestDto authCodeRequestDto, HttpServletResponse response);
-
-    AuthenticationDto loginWithApple(AuthCodeRequestDto authCodeRequestDto, HttpServletResponse response) throws Exception;
-
     AuthenticationDto verifyOTP(OTPRequestDto otpRequestDto, HttpServletResponse response);
 
     void resendOTP(ResendOTPRequestDto resendOTPRequestDto);
@@ -23,10 +19,6 @@ public interface AuthService {
     AuthenticationDto refreshToken(AccessTokenRequestDto accessTokenRequestDto, HttpServletRequest request, HttpServletResponse response);
 
     void logout(AccessTokenRequestDto accessTokenRequestDto, HttpServletRequest request, HttpServletResponse response);
-
-    String callbackGoogle(String authCode);
-
-    String callbackApple(String authCode);
 
     UserDetails getAccount();
 }

@@ -1,7 +1,7 @@
 package com.example.microbankingproject.mapper;
 
-import com.example.investhome.dto.request.UserRegistrationDto;
-import com.example.investhome.entity.UserEntity;
+import com.example.microbankingproject.dto.request.UserRegistrationDto;
+import com.example.microbankingproject.entity.UserEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

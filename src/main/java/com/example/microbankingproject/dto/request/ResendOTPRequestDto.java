@@ -1,6 +1,6 @@
 package com.example.microbankingproject.dto.request;
 
-import com.example.investhome.entity.enums.EntranceType;
+import com.example.microbankingproject.entity.enums.EntranceType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;

@@ -1,23 +1,19 @@
-package com.example.microbankingproject.service.impl;
+package com.example.microbankingproject.service.auth.impl;
 
 import com.example.microbankingproject.dto.auth.AuthenticationDto;
 import com.example.microbankingproject.dto.request.*;
-import com.example.microbankingproject.entity.AgentEntity;
 import com.example.microbankingproject.entity.UserEntity;
 import com.example.microbankingproject.entity.enums.EntranceType;
 import com.example.microbankingproject.entity.enums.Roles;
 import com.example.microbankingproject.entity.enums.TokenType;
 import com.example.microbankingproject.exception.*;
 import com.example.microbankingproject.mapper.UserMapper;
-import com.example.microbankingproject.repository.AgentRepository;
 import com.example.microbankingproject.repository.UserRepository;
 import com.example.microbankingproject.service.auth.AuthService;
 import com.example.microbankingproject.service.auth.AuthUserDetailsService;
 import com.example.microbankingproject.service.auth.JwtBlacklistService;
 import com.example.microbankingproject.service.auth.JwtService;
 import com.example.microbankingproject.service.cookie.CookieService;
-import com.example.microbankingproject.service.oauth2.AppleOAuth2Service;
-import com.example.microbankingproject.service.oauth2.GoogleOAuth2Service;
 import com.example.microbankingproject.service.sms.SMSService;
 import com.example.microbankingproject.utils.OTPCodeGenerator;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -50,12 +46,9 @@ public class AuthServiceImpl implements AuthService {
 
     UserRepository userRepository;
     UserMapper userMapper;
-    AgentRepository agentRepository;
     JwtService jwtService;
     JwtBlacklistService jwtBlacklistService;
     AuthUserDetailsService authUserDetailsService;
-    GoogleOAuth2Service googleOAuth2Service;
-    AppleOAuth2Service appleOAuth2Service;
     CookieService cookieService;
     SMSService smsService;
     RedisTemplate<String, Object> redisTemplate;

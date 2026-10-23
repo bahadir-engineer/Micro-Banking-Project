@@ -1,8 +1,8 @@
-package com.example.microbankingproject.service.impl;
+package com.example.microbankingproject.service.auth.impl;
 
-import com.example.investhome.config.properties.TokenProperties;
-import com.example.investhome.entity.enums.TokenType;
-import com.example.investhome.service.auth.JwtService;
+import com.example.microbankingproject.config.properties.TokenProperties;
+import com.example.microbankingproject.entity.enums.TokenType;
+import com.example.microbankingproject.service.auth.JwtService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
