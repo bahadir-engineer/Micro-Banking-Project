@@ -3,7 +3,8 @@ services:
     container_name: ${NGINX_HOST_NAME}
     image: nginx:alpine
     ports:
-      - "${NGINX_HOST_PORT}:${NGINX_CONTAINER_PORT}"
+      - "${NGINX_HTTP_HOST_PORT}:${NGINX_HTTP_CONTAINER_PORT}"
+      - "${NGINX_HTTPS_HOST_PORT}:${NGINX_HTTPS_CONTAINER_PORT}"
     depends_on:
       - backend
     volumes:

@@ -20,20 +20,14 @@ public class SecurityConfig {
     private final AuthenticationProvider authenticationProvider;
 
     public static final String[] AUTH_WHITELIST = {
-            "/api/auth/**"
+            "/",
+            "/api/v1/auth/**"
     };
 
     public static final String[] USER_AUTH_WHITELIST = {
     };
 
-    public static final String[] AGENT_AUTH_WHITELIST = {
-
-    };
-
-    public static final String[] MODERATOR_AUTH_WHITELIST = {
-    };
-
-    public static final String[] ADMINISTRATOR_AUTH_WHITELIST = {
+    public static final String[] ADMIN_AUTH_WHITELIST = {
 
     };
 
@@ -46,12 +40,8 @@ public class SecurityConfig {
                         auth.requestMatchers(AUTH_WHITELIST).permitAll().
                                 requestMatchers(USER_AUTH_WHITELIST).
                                 hasRole("USER").
-                                requestMatchers(AGENT_AUTH_WHITELIST).
-                                hasRole("AGENT").
-                                requestMatchers(MODERATOR_AUTH_WHITELIST).
-                                hasRole("MODERATOR").
-                                requestMatchers(ADMINISTRATOR_AUTH_WHITELIST).
-                                hasRole("ADMINISTRATOR").
+                                requestMatchers(ADMIN_AUTH_WHITELIST).
+                                hasRole("ADMIN").
                                 anyRequest().
                                 authenticated());
         http.authenticationProvider(authenticationProvider);

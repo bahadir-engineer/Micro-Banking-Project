@@ -13,6 +13,6 @@ import lombok.NoArgsConstructor;
 public class TokenRequestDto {
     @NotBlank(message = "Access Token boş ola bilməz")
     private String accessToken;
-    @NotBlank(message = "Access Token boş ola bilməz")
+    @NotBlank(message = "Refresh Token boş ola bilməz")
     private String refreshToken;
 }

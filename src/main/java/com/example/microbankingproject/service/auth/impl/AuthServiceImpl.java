@@ -10,7 +10,7 @@ import com.example.microbankingproject.exception.*;
 import com.example.microbankingproject.mapper.UserMapper;
 import com.example.microbankingproject.repository.UserRepository;
 import com.example.microbankingproject.service.auth.AuthService;
-import com.example.microbankingproject.service.auth.AuthUserDetailsService;
+//import com.example.microbankingproject.service.auth.AuthUserDetailsService;
 import com.example.microbankingproject.service.auth.JwtBlacklistService;
 import com.example.microbankingproject.service.auth.JwtService;
 import com.example.microbankingproject.utils.OTPCodeGenerator;
