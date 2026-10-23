@@ -21,6 +21,7 @@ public class SecurityConfig {
 
     public static final String[] AUTH_WHITELIST = {
             "/",
+            "/error",
             "/api/v1/auth/**"
     };
 
