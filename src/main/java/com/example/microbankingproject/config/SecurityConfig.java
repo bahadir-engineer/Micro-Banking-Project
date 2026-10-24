@@ -27,10 +27,11 @@ public class SecurityConfig {
     };
 
     public static final String[] USER_AUTH_WHITELIST = {
+            "/v1/user/**"
     };
 
     public static final String[] ADMIN_AUTH_WHITELIST = {
-
+            "/v1/admin/**"
     };
 
     @Bean
