@@ -33,7 +33,7 @@ public class PaymentServiceImpl implements PaymentService {
     AccountRepository accountRepository;
     TransactionRepository transactionRepository;
 
-    private static final long RACE_WINDOW_MS = 1500L;
+    private static final long RACE_WINDOW_MS = 10000L;
 
     @Override
     @Transactional
@@ -61,7 +61,7 @@ public class PaymentServiceImpl implements PaymentService {
 
         TransactionEntity transaction = saveTransaction(card, amount, TransactionStatus.SUCCESS);
 
-        log.info("Unsafe Payment Ended. Card: {}, New Balance: {}", card.getCardNumber(), newBalance);
+        log.info("Unsafe Payment Ended");
         return buildResponse(transaction, newBalance);
     }
 
@@ -88,11 +88,11 @@ public class PaymentServiceImpl implements PaymentService {
 
         TransactionEntity transaction = saveTransaction(card, amount, TransactionStatus.SUCCESS);
 
-        log.info("Safe Payment Ended. Card: {}, New Balance: {}", card.getCardNumber(), newBalance);
+        log.info("Safe Payment Ended");
         return buildResponse(transaction, newBalance);
     }
 
-    private CardEntity getCardByNumber(Integer cardNumber) {
+    private CardEntity getCardByNumber(Long cardNumber) {
         return cardRepository.findByCardNumber(cardNumber)
                 .orElseThrow(() -> new ApplicationException(CommonErrors.CARD_NOT_FOUND));
     }

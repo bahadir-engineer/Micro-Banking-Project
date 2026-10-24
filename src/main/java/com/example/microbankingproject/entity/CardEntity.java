@@ -22,7 +22,7 @@ public class CardEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Integer cardNumber;
+    private Long cardNumber;
     private Integer CVV;
     private Date expirationDate;
     @Enumerated(EnumType.STRING)
